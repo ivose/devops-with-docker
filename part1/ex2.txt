@@ -1,0 +1,59 @@
+mysql                    8.0         21a7ac543605   39 hours ago    530MB
+todo-frontend            latest      4f8bb134d471   12 days ago     23.9MB
+todo-backend             latest      9e6ea7e45cb2   12 days ago     209MB
+todo-frontend-dev        latest      6e3e8d6f0015   12 days ago     1.29GB
+todo-backend-dev         latest      30a14410cfac   12 days ago     927MB
+hello-front              latest      e44ea9885c55   12 days ago     1.2GB
+busybox                  latest      7cfbbec8963d   13 days ago     4.86MB
+mongo                    latest      9a5e0d0cf6de   2 weeks ago     646MB
+ubuntu                   latest      08d22c0ceb15   3 weeks ago     77.8MB
+nginx                    latest      904b8cb13b93   4 weeks ago     142MB
+redis                    latest      f9c173b0f012   4 weeks ago     117MB
+postgres                 latest      3b6645d2c145   4 weeks ago     379MB
+adminer                  latest      dcabc6cf54dd   4 weeks ago     250MB
+nicolaka/netshoot        latest      d85d32628f14   7 weeks ago     552MB
+nginx                    1.20.1      c8d03f6b8b91   17 months ago   133MB
+hello-world              latest      feb5d9fea6a5   18 months ago   13.3kB
+mongo                    4.2.8       d9775815948b   2 years ago     388MB
+fenglc/pgadmin4          latest      f7ec662a65ad   5 years ago     853MB
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ docker system prune
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all dangling build cache
+
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+532f71991740e1ed6ce83b7023c7537c6d55a33bb0d46e90cfdf063cb046c826
+82bb3462981edcd92384592aa008bbffe401d93edc4b7cdd46cbef03e6cbdf2a
+
+Deleted Networks:
+mongodb
+todo-app
+
+
+
+^Civo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ docker system prune
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all dangling build cache
+
+Are you sure you want to continue? [y/N] y
+
+^Civo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ docker system prune -a
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all images without at least one container associated to them
+  - all build cache
+
+Are you sure you want to continue? [y/N] y
+^Civo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ docker system prune -f
+^Civo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ docker ps -a 
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$

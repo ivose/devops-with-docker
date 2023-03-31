@@ -1,0 +1,26 @@
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker/part1$ docker build . -t webserver
+[+] Building 0.2s (9/9) FINISHED
+ => [internal] load build definition from Dockerfile                                                                    0.1s
+ => => transferring dockerfile: 38B                                                                                     0.1s
+ => [internal] load .dockerignore                                                                                       0.1s
+ => => transferring context: 2B                                                                                         0.1s
+ => [internal] load metadata for docker.io/library/ubuntu:18.04                                                         0.0s
+ => [1/5] FROM docker.io/library/ubuntu:18.04                                                                           0.0s
+ => CACHED [2/5] WORKDIR /mydir                                                                                         0.0s
+ => CACHED [3/5] RUN apt-get update && apt-get install -y curl python                                                   0.0s
+ => CACHED [4/5] RUN curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl                 0.0s
+ => CACHED [5/5] RUN chmod a+x /usr/local/bin/youtube-dl                                                                0.0s
+ => exporting to image                                                                                                  0.0s
+ => => exporting layers                                                                                                 0.0s
+ => => writing image sha256:5aad0bdcf658d904b106b396a39dd5aa58d5eee2c01b501fd2dc782193352fd9                            0.0s
+ => => naming to docker.io/library/webserver    
+ ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker/part1$ docker run -p 3000:8080 webserver
+[imgur:gallery] xwJgflf: Downloading JSON metadata
+[download] Downloading playlist: This friendly bus driver helps a lady explain to her boss why she'll be late to work today
+[imgur:gallery] playlist This friendly bus driver helps a lady explain to her boss why she'll be late to work today: Collected 1 video ids (downloading 1 of them)
+[download] Downloading video 1 of 1
+[Imgur] DFKThYs: Downloading webpage
+[download] Destination: Imgur-DFKThYs.mp4
+[download] 100% of 2.54MiB in 00:14.11KiB/s ETA 00:00
+[download] Finished downloading playlist: This friendly bus driver helps a lady explain to her boss why she'll be late to work today
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker/part1$

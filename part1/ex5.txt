@@ -1,0 +1,25 @@
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ docker pull devopsdockeruh/simple-web-service:ubuntu
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Image is up to date for devopsdockeruh/simple-web-service:ubuntu
+docker.io/devopsdockeruh/simple-web-service:ubuntu
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ docker pull devopsdockeruh/simple-web-service:alpine
+alpine: Pulling from devopsdockeruh/simple-web-service
+ba3557a56b15: Pull complete
+1dace236434b: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:alpine
+docker.io/devopsdockeruh/simple-web-service:alpine
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED         SIZE
+postgres                            latest    80c558ffdc31   2 days ago      379MB
+ubuntu                              latest    08d22c0ceb15   3 weeks ago     77.8MB
+ubuntu                              18.04     3941d3b032a8   3 weeks ago     63.1MB
+hello-world                         latest    feb5d9fea6a5   18 months ago   13.3kB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   2 years ago     83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   2 years ago     15.7MB
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$
+
+... i.e ubuntu is 83mb ja alpine 15.7mb
+

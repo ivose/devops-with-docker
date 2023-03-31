@@ -1,0 +1,1 @@
+Run on one terminal "cd ex12 && sh script.sh" and in another terminal "cd ex13 && sh script.sh". After then we can look [here](http://localhost:5000) and press a button on Exercise 1.14-row.

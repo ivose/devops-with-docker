@@ -1,0 +1,14 @@
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS       NAMES
+532f71991740   mongo     "docker-entrypoint.s…"   28 seconds ago       Up 27 seconds       27017/tcp   zen_perlman
+9e310fb41db9   redis     "docker-entrypoint.s…"   About a minute ago   Up About a minute   6379/tcp    goofy_feistel
+82bb3462981e   nginx     "/docker-entrypoint.…"   6 minutes ago        Up 6 minutes        80/tcp      confident_nash
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ docker stop 82bb3462981e 532f71991740
+82bb3462981e
+532f71991740
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                     PORTS      NAMES
+532f71991740   mongo     "docker-entrypoint.s…"   56 seconds ago   Exited (0) 8 seconds ago              zen_perlman
+9e310fb41db9   redis     "docker-entrypoint.s…"   2 minutes ago    Up 2 minutes               6379/tcp   goofy_feistel
+82bb3462981e   nginx     "/docker-entrypoint.…"   6 minutes ago    Exited (0) 8 seconds ago              confident_nash
+ivo@LAPTOP-0KNMEE5S:/mnt/c/ivo/fullstack/docker$ 
