@@ -1,8 +1,8 @@
 # Commands
 
-    docker build . -t web-server
-    docker run web-server
+    docker build . -t curler
+    docker run curler
 
-or 
+or
 
     sh script.sh

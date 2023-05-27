@@ -1,0 +1,68 @@
+version: "3.9"
+
+services:
+  postgres_13_2_alpine:
+    image: postgres:13.2-alpine
+    container_name: postgres_13_2_alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    volumes:
+      - database:/var/lib/postgresql/data
+    networks:
+      - network-t210
+
+  redis:
+    container_name: redis
+    image: redis
+    restart: unless-stopped
+    networks:
+      - network-t210
+
+  backend:
+    container_name: backend
+    environment:
+      REDIS_HOST: redis
+      POSTGRES_HOST: postgres_13_2_alpine
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      REQUEST_ORIGIN: ${REQUEST_ORIGIN}
+    depends_on:
+      - redis
+      - postgres_13_2_alpine
+    build:
+      context: .
+      dockerfile: ./back.Dockerfile
+      args:
+        - REQUEST_ORIGIN=${REQUEST_ORIGIN}
+    networks:
+      - network-t210
+
+  frontend:
+    container_name: frontend
+    depends_on:
+      - backend
+    build:
+      context: .
+      dockerfile: ./front.Dockerfile
+      args:
+        - REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL}
+    networks:
+      - network-t210
+
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - network-t210
+
+volumes:
+  database:
+
+
+networks:
+  network-t210:
+    name: network-t210

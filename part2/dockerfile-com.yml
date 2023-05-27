@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+    youtube-dl-ubuntu:
+      image: ivo123/mysimplerepo
+      build: .
+        - .:/mydir
+      container_name: youtube-dl

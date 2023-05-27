@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  whoami:
+    image: jwilder/whoami
+    ports:
+      - 8000:8000
+
+#docker compose up -d
+#curl localhost:8000

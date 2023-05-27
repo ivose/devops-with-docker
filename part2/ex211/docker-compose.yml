@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  ex11_postgres:
+    image: postgres
+    container_name: ex11_postgres
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=mydatabase
+      - POSTGRES_USER=mydatabaseuser
+      - POSTGRES_PASSWORD=mypassword
+
+  ex11_web:
+    build: .
+    container_name: ex11_web
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - ex11_postgres
+
+volumes:
+  postgres_data:

@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  postgres_13_2_alpine:
+    image: postgres:13.2-alpine
+    container_name: postgres_13_2_alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    volumes:
+      - database:/var/lib/postgresql/data
+
+  redis:
+    container_name: redis
+    image: redis
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+
+  backend:
+    container_name: backend
+    environment:
+      REDIS_HOST: redis
+      POSTGRES_HOST: postgres_13_2_alpine
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    depends_on:
+      - redis
+      - postgres_13_2_alpine
+    build:
+      context: .
+      dockerfile: ./back.Dockerfile
+    ports:
+      - 8080:8080
+
+  frontend:
+    container_name: frontend
+    depends_on:
+      - backend
+    build:
+      context: .
+      dockerfile: ./front.Dockerfile
+    ports:
+      - 5000:5000
+
+volumes:
+  database:
